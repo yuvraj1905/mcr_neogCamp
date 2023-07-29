@@ -25,7 +25,6 @@ export const reducer = (state, { type, payload }) => {
     }
 
     case "playlistAdder": {
-      //   console.log(payload);
       return {
         ...state,
         playlists: [...state.playlists, { title: payload, videos: [] }],
@@ -33,7 +32,6 @@ export const reducer = (state, { type, payload }) => {
     }
 
     case "playlistRemover": {
-      //   console.log(payload);
       const updatedData = state?.playlists?.filter(
         ({ title }) => title !== payload
       );
