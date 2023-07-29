@@ -71,3 +71,21 @@
   margin-left: -2.5rem;
   margin-top: 2rem;
 }
+
+.addNewNoteModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  gap: 0.25rem;
+  background-color: white;
+  z-index: 10001;
+  /* color: white; */
+}
+
+.blur {
+  filter: blur(0.3rem) brightness(0.5);
+}

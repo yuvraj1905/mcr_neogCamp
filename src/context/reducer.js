@@ -73,6 +73,38 @@ export const reducer = (state, { type, payload }) => {
       return { ...state, playlists: [...updatedData] };
     }
 
+    case "noteAdd": {
+      const updatedData = state?.allVideos?.map((vid) =>
+        vid._id === payload[1]
+          ? { ...vid, notes: [...vid.notes, payload[0]] }
+          : { ...vid }
+      );
+      return { ...state, allVideos: [...updatedData] };
+    }
+
+    case "noteDelete": {
+      const updatedData = state?.allVideos?.map((vid) =>
+        vid._id === payload[1]
+          ? { ...vid, notes: vid.notes.filter((note) => note !== payload[0]) }
+          : { ...vid }
+      );
+      return { ...state, allVideos: [...updatedData] };
+    }
+
+    case "noteUpdate": {
+      const updatedData = state?.allVideos?.map((vid) =>
+        vid._id === payload[2]
+          ? {
+              ...vid,
+              notes: [...vid.notes, payload[1]].filter(
+                (note) => note !== payload[0]
+              ),
+            }
+          : { ...vid }
+      );
+      return { ...state, allVideos: [...updatedData] };
+    }
+
     default: {
       return { ...state };
     }
