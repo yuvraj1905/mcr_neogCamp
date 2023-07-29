@@ -11,24 +11,27 @@ const Playlist = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="videosPage">
-      <h1>Playlists</h1>
-      <button className="boxShadowBtn" onClick={() => setShowModal(true)}>
-        Create new playlist
-      </button>
+    <>
+      <div className={showModal ? "videosPage blur" : "videosPage"}>
+        <h1>Playlists</h1>
+        <button className="boxShadowBtn" onClick={() => setShowModal(true)}>
+          Create new playlist
+        </button>
+
+        {playlists.length > 0 ? (
+          <section className="videosSection">
+            {playlists?.map((playlist) => (
+              <PlaylistCard data={playlist} />
+            ))}
+          </section>
+        ) : (
+          <h2>No playlists</h2>
+        )}
+      </div>
       <section className="modal" style={{ display: !showModal ? "none" : "" }}>
         {<PlaylistModal fn={setShowModal} />}
       </section>
-      {playlists.length > 0 ? (
-        <section className="videosSection">
-          {playlists?.map((playlist) => (
-            <PlaylistCard data={playlist} />
-          ))}
-        </section>
-      ) : (
-        <h2>No playlists</h2>
-      )}
-    </div>
+    </>
   );
 };
 
