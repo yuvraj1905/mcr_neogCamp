@@ -26,6 +26,7 @@ export const VideosContextProvider = ({ children }) => {
           },
         ])
       );
+      dispatch({ type: "dataSetter" });
     } else {
       localStorage.setItem("allVideos", JSON.stringify(state.allVideos));
       localStorage.setItem("playlists", JSON.stringify(state.playlists));

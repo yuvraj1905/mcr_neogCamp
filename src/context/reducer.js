@@ -1,5 +1,19 @@
+import { videos } from "../data/videos";
+
 export const reducer = (state, { type, payload }) => {
   switch (type) {
+    case "dataSetter": {
+      return {
+        ...state,
+        allVideos: [...videos],
+        playlists: [
+          {
+            title: "Favourites",
+            videos: [],
+          },
+        ],
+      };
+    }
     case "watchLaterChanger": {
       const updatedData = state?.allVideos?.map((video) =>
         video._id === payload[1]
