@@ -1,0 +1,16 @@
+.navSection {
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  width: 12%;
+  flex-direction: column;
+}
+.navSection > a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  background-color: aliceblue;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  font-weight: 800;
+}

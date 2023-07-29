@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+}
+.App {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+  position: relative;
+  justify-content: space-between;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.mainContent {
+  margin-left: 15%;
+  flex: 0 0 85%;
+}

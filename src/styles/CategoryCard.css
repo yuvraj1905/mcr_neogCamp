@@ -1,0 +1,4 @@
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+}
